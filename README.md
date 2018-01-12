@@ -12,7 +12,7 @@ To run, this script needs:
 
 -The latest SILVA SSU database (SILVA_XXX_SSURef_tax_silva_trunc.fasta)
 
--A mapping file (taxmap_embl_ssu_ref_128.txt). Assumes taxid in column 6
+-A mapping file (taxmap_embl_ssu_ref_XXX.txt). Assumes taxid in column 6
 
 The SILVA database and coresponding mapping files are available at https://www.arb-silva.de/download/archive/
 
