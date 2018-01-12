@@ -1,4 +1,4 @@
-#SILVA mar (mmp.sfb.uit.no)
+# SILVA mar (mmp.sfb.uit.no)
 
 ## map_SILVAmar.py
 
