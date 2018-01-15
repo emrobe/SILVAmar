@@ -23,6 +23,10 @@ with open(args.input) as handle:
 
 # Apply threshold cut off
 for k,v in data.items():
+	# Mapseq bug: The taxa B16S, and maybe others include an extra \t, which screws up strict x3 column output pr taxa while parsing. Perform quick fix.
+	if len(v)%3 != 0:
+		v.remove('')
+
 	for x, _ in enumerate(v):
 		if x%3 == 0:
 			if float(min(v[x+1], v[x+2])) >= args.c:
