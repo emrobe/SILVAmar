@@ -4,6 +4,7 @@ import argparse, collections
 parser = argparse.ArgumentParser(description='This script converts Mapseq formated results to KronaTools (ktImportText)')
 parser.add_argument('input', help="Input file (Mapseq output file)", type=str)
 parser.add_argument('-c', type=float, default=0.5, help="Confidence score threshold. (default 0.5)")
+parser.add_argument('-u', type=int, default=0, help="Unclassified count. Mapseq does not provide information of unclassified reads, however if you have counted this manually, you can provide it for more sensible visualization in the Krona Chart")
 args = parser.parse_args()
 
 data = collections.defaultdict(str)
@@ -41,5 +42,6 @@ for k,v in krona.items():
 	taxa = "\t".join(list(k))
 	print "{}\t{}".format(v,taxa)
 
-		
-#print data, args.c
+
+if args.u is not 0:
+	print "{}\t{}".format(args.u,'No Hits')
